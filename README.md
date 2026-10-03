@@ -132,6 +132,35 @@ APP_SERVICES_CACHE=/tmp/services.php
 - `database/migrations/*_create_siswas_table.php`, `*_create_nilais_table.php`
 - `resources/views/` — Blade + CSS sederhana (tanpa build Vite wajib)
 
+## Push ke GitHub (untuk import Vercel)
+
+Repositori Git lokal sudah siap (`main`, commit awal). File `.env` tidak ikut di-commit.
+
+1. Login GitHub CLI (sekali saja):
+
+```bash
+brew install gh   # jika belum ada
+gh auth login
+```
+
+2. Buat repo di GitHub dan push dari folder proyek:
+
+```bash
+cd /Volumes/PROJECT/PELATIHAN/HALTIM/siswa-nilai
+gh repo create siswa-nilai --public --source=. --remote=origin --push
+```
+
+Ganti `siswa-nilai` jika nama repo sudah dipakai (mis. `siswa-nilai-haltim`).
+
+3. Di [Vercel](https://vercel.com) → **Add New Project** → import repo GitHub tersebut → root directory `.` → deploy.
+
+Alternatif tanpa `gh`: buat repo kosong di github.com, lalu:
+
+```bash
+git remote add origin git@github.com:USERNAME/siswa-nilai.git
+git push -u origin main
+```
+
 ## Lisensi
 
 Proyek pelatihan — bebas dimodifikasi.
