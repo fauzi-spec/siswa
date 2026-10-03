@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "description": "Metadata untuk deploy Laravel di Vercel (runtime vercel-php)",
+  "dependencies": {
+    "vercel-php": "0.7.1"
+  }
+}
